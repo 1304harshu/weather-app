@@ -1,0 +1,162 @@
+body{
+    background: #8C52FF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#weather-container{
+    background-color: rgba(255, 255, 255, 0.3);
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+h2, label, p{
+    color: #fff;
+    margin: 8px 0;
+}
+
+input{
+    width: calc(100% - 16px);
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid white;
+    margin-top: 20px;
+}
+
+button{
+    background-color: #debff4;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100px;
+    font-size: 15px;
+}
+
+button:hover{
+    background: #8b48d7;
+}
+
+#temp-div-p{
+    font-size: 60px;
+    margin-top: -30px;
+
+}
+
+#weather-info{
+    font-size: 20px;
+}
+
+#weather-icon{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 10px;
+    margin-top: 0;
+    display: none;
+}
+
+#hourly-forcast{
+    margin-top: 50px;
+    overflow-x: auto;
+    white-space: norap;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hourly-item{
+    flex: 0 0 auto;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+    color: white;
+}
+
+.hourly-item img{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+
+
+/* Existing styles remain... add/replace with below */
+
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#weather-container {
+    /* existing styles... */
+    animation: fadeSlideIn 0.8s ease forwards;
+    opacity: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#weather-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 8px #fff;
+    transition: box-shadow 0.3s ease;
+}
+
+button {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+#weather-icon {
+    animation: popIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+#temp-div, #weather-info {
+    animation: fadeSlideIn 1s ease forwards;
+    opacity: 0;
+    animation-delay: 0.5s;
+}
+
+.hourly-item {
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeSlideIn 0.6s ease forwards;
+    animation-delay: 1s;
+}
